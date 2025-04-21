@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 11:52:32 by armitite          #+#    #+#             */
-/*   Updated: 2025/04/21 13:05:52 by armitite         ###   ########.fr       */
+/*   Updated: 2025/04/21 13:25:35 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n) {
 template <typename T>
 Array<T>::Array(Array const &copy) {
 	
+	std::cout << "Copy constructor called" << std::endl;
 	if (this != &copy)
 		*this = copy;
 	return ;
@@ -35,6 +36,7 @@ Array<T>::Array(Array const &copy) {
 template <typename T>
 Array<T> &Array<T>::operator=(Array const &assign) {
 
+	std::cout << "Operator = called" << std::endl;
 	if (this != &assign) {
 		this->_size = assign._size;
 		this->_array = new T[this->_size];
